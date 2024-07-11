@@ -2,8 +2,8 @@
 
 import React from "react";
 import Logo from "@/components/Logo";
-import QuickLinks from "@/components/QuickLinks";
-import Languages from "@/components/Languages";
+import QuickLinks from "@/components/Sidebar/QuickLinks";
+import Languages from "@/components/Sidebar/Languages";
 import { useGlobalContext } from "@/context/ContextApi";
 
 const Sidebar = () => {
