@@ -3,6 +3,9 @@
 import React from "react";
 import { useGlobalContext } from "@/context/ContextApi";
 import ProfileUser from "@/components/TopBar/ProfileUser";
+import SearchBar from "@/components/TopBar/SearchBar";
+import SideBarMenuIcon from "@/components/TopBar/SideBarMenuIcon";
+import DarkMode from "@/components/TopBar/DarkMode";
 
 const TopBar = () => {
   const {

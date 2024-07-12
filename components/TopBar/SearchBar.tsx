@@ -2,8 +2,15 @@
 
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
+import AddSnippetButton from "@/components/TopBar/AddSnippetButton";
+import { useGlobalContext } from "@/context/ContextApi";
 
 const SearchBar = () => {
+  const {
+    darkModeObject: { darkMode },
+    sideBarMenuObject: { sideBarMenu, setSideBarMenu },
+    searchQueryObject: { searchQuery, setSearchQuery },
+  } = useGlobalContext();
   return (
     <div
       className={` ${darkMode[1].isSelected ? "bg-slate-700" : "bg-slate-100"}  relative pl-3 w-[60%] h-[38px]   rounded-3xl flex items-center gap-2`}

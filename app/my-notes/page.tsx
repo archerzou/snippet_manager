@@ -6,6 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { useGlobalContext } from "@/context/ContextApi";
 import ConfirmationWindow from "@/components/ConfirmationWindow";
 import Sidebar from "@/components/Sidebar/Sidebar";
+import ContentArea from "@/components/ContentArea/ContentArea";
 
 const Page = () => {
   const {
@@ -29,6 +30,7 @@ const Page = () => {
         }}
       />
       <Sidebar />
+      <ContentArea />
     </div>
   );
 };

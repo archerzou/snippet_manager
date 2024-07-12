@@ -22,7 +22,7 @@ const OpenTheContentNote = (
     return new Intl.DateTimeFormat("en-US", options).format(date);
   };
 
-  // Creating an new note
+  // Creating new note
   const newSingleNote: SingleNoteType = {
     _id: uuidv4(),
     clerkUserId: sharedUserId || "",
