@@ -14,7 +14,7 @@ import {
   SingleTagType,
   SingleCodeLanguageType,
   CodeLanguageCounterType,
-} from "./Types";
+} from "../types";
 import { v4 as uuidv4 } from "uuid";
 import StyleOutlinedIcon from "@mui/icons-material/StyleOutlined";
 import { useUser } from "@clerk/nextjs";

@@ -9,3 +9,11 @@ export const capitalizeFirstOccurrence = (str: string) => {
 
   return str; // If no non-space characters are found, return the string as is.
 };
+
+export const truncateString = (str: string, num: number) => {
+  if (str.length > num) {
+    return str.slice(0, num) + "...";
+  } else {
+    return str;
+  }
+};

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useGlobalContext } from "@/context/ContextApi";
+import SwiperSelection from "@/components/NotesArea/SwiperSelection";
 
 const NotesArea = () => {
   const {
