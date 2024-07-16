@@ -3,6 +3,12 @@
 import React from "react";
 import { useGlobalContext } from "@/context/ContextApi";
 import { SingleNoteType } from "@/types";
+import NoteHeader from "@/components/NotesArea/NoteHeader";
+import NoteDate from "@/components/NotesArea/NoteDate";
+import NoteTags from "@/components/NotesArea/NoteTags";
+import NoteDescription from "@/components/NotesArea/NoteDescription";
+import CodeBlock from "@/components/NotesArea/CodeBlock";
+import NoteFooter from "@/components/NotesArea/NoteFooter";
 
 const SingleNote = ({ note }: { note: SingleNoteType }) => {
   const {

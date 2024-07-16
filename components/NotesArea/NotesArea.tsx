@@ -3,6 +3,8 @@
 import React from "react";
 import { useGlobalContext } from "@/context/ContextApi";
 import SwiperSelection from "@/components/NotesArea/SwiperSelection";
+import AllNotesSection from "@/components/NotesArea/AllNotesSection";
+import ContentNote from "@/components/ContentNote/ContentNote";
 
 const NotesArea = () => {
   const {

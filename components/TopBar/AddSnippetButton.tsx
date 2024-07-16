@@ -3,7 +3,7 @@
 import React from "react";
 import { useGlobalContext } from "@/context/ContextApi";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
-import OpenTheContentNote from "@/components/TopBar/OpenTheContentNote";
+import OpenTheContentNote from "@/components/OpenTheContentNote";
 
 const AddSnippetButton = () => {
   const {

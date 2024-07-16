@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useGlobalContext } from "@/context/ContextApi";
-import LanguageTextToIcon from "@/components/Sidebar/LanguageTextToIcon";
+import LanguageTextToIcon from "@/components/LanguageTextToIcon";
 import { capitalizeFirstOccurrence } from "@/lib/utils";
 
 const Languages = () => {
