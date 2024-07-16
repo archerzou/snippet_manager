@@ -36,7 +36,7 @@ export async function POST(req: Request) {
   } catch (error) {
     console.log(error);
 
-    return NextResponse.json({ error: error }, { status: 400 });
+    return NextResponse.json({ error: error }, { status: 400 } as any);
   }
 }
 
@@ -47,6 +47,88 @@ export async function GET(req: any) {
     const notes = await SnippetM.find({ clerkUserId: clerkId });
     return NextResponse.json({ notes: notes });
   } catch (error) {
-    return NextResponse.json({ error: error }, { status: 400 });
+    return NextResponse.json({ error: error }, { status: 400 } as any);
+  }
+}
+
+export async function PUT(request: any) {
+  try {
+    const snippetId = request.nextUrl.searchParams.get("snippetId");
+    const {
+      title,
+      isFavorite,
+      clerkUserId,
+      tags,
+      description,
+      code,
+      language,
+      creationDate,
+      isTrash,
+    } = await request.json();
+
+    if (!snippetId) {
+      return NextResponse.json({ message: "Snippet ID is required" }, {
+        status: 400,
+      } as any);
+    }
+
+    // Connect to the database
+    await connect();
+
+    // Find the snippet by snippet and update it
+    const updatedSnippet = await SnippetM.findOneAndUpdate(
+      { _id: snippetId },
+      {
+        $set: {
+          title,
+          isFavorite,
+          clerkUserId,
+          tags,
+          description,
+          code,
+          language,
+          creationDate,
+          isTrash,
+        },
+      },
+      { returnDocument: "after" }, // Return the updated document
+    );
+
+    console.log(updatedSnippet);
+
+    return NextResponse.json({
+      note: updatedSnippet,
+    });
+  } catch (error) {
+    console.error("Error updating snippet:", error);
+    return NextResponse.json({ status: 500 });
+  }
+}
+
+export async function DELETE(request: Request) {
+  try {
+    const url = new URL(request.url);
+    const snippetId = url.searchParams.get("snippetId");
+
+    if (!snippetId) {
+      return NextResponse.json({ message: "snippetId is required" }, {
+        status: 400,
+      } as any);
+    }
+
+    const snippetToDelete = await SnippetM.findOneAndDelete({ _id: snippetId });
+
+    if (!snippetToDelete) {
+      return NextResponse.json({ message: "Snippet not found" }, {
+        status: 404,
+      } as any);
+    }
+
+    return NextResponse.json({ message: "Snippet deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting snippet:", error); // Log the error for debugging
+    return NextResponse.json({ message: "Failed to delete snippet" }, {
+      status: 500,
+    } as any);
   }
 }

@@ -2,6 +2,10 @@
 
 import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import {
+  materialLight,
+  oneDark,
+} from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { useGlobalContext } from "@/context/ContextApi";
 import { truncateString } from "@/lib/utils";
 
