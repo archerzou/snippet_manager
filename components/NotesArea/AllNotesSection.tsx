@@ -9,7 +9,7 @@ import DeleteOutlineOutlined from "@mui/icons-material/DeleteOutlineOutlined";
 
 import { useGlobalContext } from "@/context/ContextApi";
 import SingleNote from "@/components/NotesArea/SingleNote";
-import EmptyPlaceHolder from "@/components/NotesArea/EmptyPlaceHolder";
+import EmptyPlaceHolder from "@/components/EmptyPlaceHolder";
 
 const AllNotesSection = () => {
   const {

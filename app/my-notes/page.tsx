@@ -2,11 +2,12 @@
 
 import React from "react";
 
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import { useGlobalContext } from "@/context/ContextApi";
 import ConfirmationWindow from "@/components/ConfirmationWindow";
 import Sidebar from "@/components/Sidebar/Sidebar";
 import ContentArea from "@/components/ContentArea/ContentArea";
+import TagsWindow from "@/components/TagsWindow/TagsWindow";
 
 const Page = () => {
   const {
@@ -20,6 +21,10 @@ const Page = () => {
       {openConfirmationWindow && (
         <div className="fixed w-full h-full bg-black z-50 opacity-20"></div>
       )}
+      {openNewTagsWindow && (
+        <div className="fixed w-full h-full bg-black z-50 opacity-20"></div>
+      )}
+      <TagsWindow />
       <ConfirmationWindow />
       <Toaster
         toastOptions={{
