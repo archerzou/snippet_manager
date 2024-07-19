@@ -8,6 +8,7 @@ import ConfirmationWindow from "@/components/ConfirmationWindow";
 import Sidebar from "@/components/Sidebar/Sidebar";
 import ContentArea from "@/components/ContentArea/ContentArea";
 import TagsWindow from "@/components/TagsWindow/TagsWindow";
+import AddTagWindow from "@/components/AddTagWindow/AddTagWindow";
 
 const Page = () => {
   const {
@@ -24,6 +25,7 @@ const Page = () => {
       {openNewTagsWindow && (
         <div className="fixed w-full h-full bg-black z-50 opacity-20"></div>
       )}
+      <AddTagWindow />
       <TagsWindow />
       <ConfirmationWindow />
       <Toaster
