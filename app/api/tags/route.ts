@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 import connect from "@/lib/connect";
-import Tag from "@/Models/TagSchema";
+import Tag from "@/models/TagSchema";
 
 export async function POST(req: Request) {
   try {
@@ -58,7 +58,7 @@ export async function PUT(request: any) {
           clerkUserId,
         },
       },
-      { returnDocument: "after" }, // Return the updated document
+      { returnDocument: "after" } // Return the updated document
     );
 
     console.log(updatedTag);
