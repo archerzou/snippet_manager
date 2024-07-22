@@ -26,10 +26,10 @@ const TagsWindow = () => {
 
   const countTags = (
     notes: any[],
-    allTags: Tag[],
+    allTags: Tag[]
   ): { name: string; count: number }[] => {
     // Initialize tagCount with all tags set to 0
-    const tagCount: TagCount = allTags.reduce((acc, tag) => {
+    const tagCount: TagCount = allTags.reduce((acc: TagCount, tag: Tag) => {
       acc[tag.name] = 0;
       return acc;
     }, {});
@@ -54,7 +54,7 @@ const TagsWindow = () => {
 
   const sortAllTags = (
     notes: SingleNoteType[],
-    allTags: SingleTagType[],
+    allTags: SingleTagType[]
   ): SingleTagType[] => {
     // First, get the count of tags
     const tagCounts = countTags(notes, allTags);
