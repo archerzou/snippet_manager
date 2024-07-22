@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
-import debounce from "lodash/debounce";
+import { debounce } from "lodash";
 import { useGlobalContext } from "@/context/ContextApi";
 import { SingleNoteType } from "@/types";
 import ContentNoteHeader from "@/components/ContentNote/ContentNoteHeader";
@@ -21,7 +21,7 @@ const ContentNote = () => {
   } = useGlobalContext();
 
   const [singleNote, setSingleNote] = useState<SingleNoteType | undefined>(
-    undefined,
+    undefined
   );
   useEffect(() => {
     //If openContentNote is true
@@ -63,7 +63,7 @@ const ContentNote = () => {
           return updatedNotes.sort(
             (a, b) =>
               new Date(b.creationDate).getTime() -
-              new Date(a.creationDate).getTime(),
+              new Date(a.creationDate).getTime()
           );
         }
         return updatedNotes;
@@ -83,7 +83,7 @@ const ContentNote = () => {
       debounce((note: SingleNoteType, isNew: boolean) => {
         saveNoteInDB(note, isNew);
       }, 500),
-    [],
+    []
   );
 
   useEffect(() => {
