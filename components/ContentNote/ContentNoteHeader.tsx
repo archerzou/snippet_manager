@@ -69,7 +69,7 @@ const ContentNoteHeader = ({
           onFocus={() => setOnFocus(true)}
           onMouseEnter={() => setOnFocus(true)}
           onMouseLeave={() => setOnFocus(false)}
-          className={`font-bold text-xl outline-none resize-none  h-auto  overflow-hidden w-full ${darkMode[1].isSelected ? "bg-slate-800 text-white" : "bg-white"} `}
+          className={`font-bold text-xl outline-none resize-none  h-auto  overflow-hidden w-full ${darkMode[1].isSelected ? "bg-slate-800 text-white" : "bg-white text-slate-600"} `}
         />
       </div>
       <CloseIcon

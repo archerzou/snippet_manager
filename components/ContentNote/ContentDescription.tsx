@@ -55,7 +55,7 @@ const ContentDescription = ({
         onChange={onUpdateDescription}
         value={singleNote.description}
         placeholder="New Description..."
-        className={`text-sm outline-none  border ${isHovered ? "border-purple-600" : ""} rounded-lg p-2   w-full ${darkMode[1].isSelected ? "bg-slate-800 text-white" : "bg-white"}`}
+        className={`text-sm outline-none  border ${isHovered ? "border-purple-600" : ""} rounded-lg p-2   w-full ${darkMode[1].isSelected ? "bg-slate-800 text-white" : "bg-white text-slate-800"}`}
       />
     </div>
   );
